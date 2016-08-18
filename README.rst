@@ -61,7 +61,7 @@ Usage
 
 With the questions during installation answered, the user will have a fully functioning Python project
 in their current working directory. This package will contain a GUI application template in the package
-directory as well as a test suite in the package's tests folder. All the user needs to finish codign is the rest of their GUI application and related tests.
+directory as well as a test suite in the package's tests folder. All the user needs to finish coding is the rest of their GUI application and related tests.
 
 
 Screenshot
