@@ -28,11 +28,11 @@ setup(
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
     packages=[
-        '{{ cookiecutter.package_name }}, {{ cookiecutter.package_name}}.tests',
+        '{{ cookiecutter.package_name }}', '{{ cookiecutter.package_name}}.tests'
     ],
     entry_points={
         'console_scripts': [
-            '{{ cookiecutter.application_title }}={{ cookiecutter.package_name }}{{ cookiecutter.application_name }}:main'
+            '{{ cookiecutter.application_title }}={{ cookiecutter.package_name }}.{{ cookiecutter.application_name }}:main'
         ]
     },
     include_package_data=True,
