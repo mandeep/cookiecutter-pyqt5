@@ -2,8 +2,12 @@
     "full_name": "Mandeep Bhutani",
     "email": "info@mandeep.xyz",
     "github_username": "mandeepbhutani",
-    "project_name": "PyQt5 cookiecutter",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-    "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-    "version": "0.1.0"
+    "repo_name": "cookiecutter-PyQt5",
+    "package_name": "{{ cookiecutter.repo_name.lower().replace(' ', '_') }}",
+    "application_name": "application.py",
+    "application_title": "PyQt5 Template",
+    "project_short_description": "A PyQt5 GUI application",
+    "version": "0.0.1",
+    "insert_menubar": "yes",
+    "insert_statusbar": "yes"
 }
