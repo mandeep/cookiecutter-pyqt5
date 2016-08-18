@@ -17,6 +17,9 @@ from {{ cookiecutter.package_name }} import {{ cookiecutter.application_name }}
 
 @pytest.fixture
 def window(qtbot):
+    """Window is used as a pytest fixture that allows passing it to test functions. Qtbot
+    uses qApp to open a new main window."""
+
     new_window = {{cookiecutter.application_name }}.{{cookiecutter.application_title }}()
     qtbot.add_widget(new_window)
     new_window.show()
@@ -25,6 +28,8 @@ def window(qtbot):
 {% if cookiecutter.insert_menubar == 'yes' %}
 @pytest.fixture
 def menu(qtbot):
+    """Menu is used as a pytest fixture for tests that need to test the menu bar."""
+
     new_menu_bar = {{cookiecutter.application_name}}.MenuBar()
     qtbot.add_widget(new_menu_bar)
     return new_menu_bar
@@ -40,6 +45,9 @@ def test_window_geometry(window):
 
 {% if cookiecutter.insert_menubar == 'yes' %}
 def test_open_file(window, menu, qtbot, mock):
+    """Qtbot clicks on the file sub menu and then navigates to the Open File item. Mock creates
+    an object to be passed to the QFileDialog."""
+
     qtbot.mouseClick(menu.file_sub_menu, Qt.LeftButton)
     qtbot.keyClick(menu.file_sub_menu, Qt.Key_Down)
     mock.patch.object(QFileDialog, 'getOpenFileName', return_value=('README.rst', '*.rst'))
@@ -47,6 +55,8 @@ def test_open_file(window, menu, qtbot, mock):
 
 
 def test_about_dialog(window, menu, qtbot, mock):
+    """Qtbot clicks on the help sub menu and then navigates to the About item. Mock creates a
+    finished return value so that the QDialog closes."""
     qtbot.mouseClick(menu.help_sub_menu, Qt.LeftButton)
     qtbot.keyClick(menu.help_sub_menu, Qt.Key_Down)
     mock.patch.object(QDialog, 'exec_', return_value='finished')
