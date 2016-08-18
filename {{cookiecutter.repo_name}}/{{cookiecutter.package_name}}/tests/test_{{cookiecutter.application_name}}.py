@@ -50,7 +50,7 @@ def test_open_file(window, menu, qtbot, mock):
 
     qtbot.mouseClick(menu.file_sub_menu, Qt.LeftButton)
     qtbot.keyClick(menu.file_sub_menu, Qt.Key_Down)
-    mock.patch.object(QFileDialog, 'getOpenFileName', return_value=('README.rst', '*.rst'))
+    mock.patch.object(QFileDialog, 'getOpenFileName', return_value=('', ''))
     qtbot.keyClick(menu.file_sub_menu, Qt.Key_Enter)
 
 
