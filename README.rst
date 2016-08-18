@@ -44,7 +44,7 @@ project::
     $ application_name [application]: Enter the name of your GUI application.
 
     $ application_title [Template]: Enter the title of your application. This name is also used
-    as an entry point into the application.
+      as an entry point into the application.
 
     $ project_short_description [A PyQt5 GUI application]: Enter a short description about your project.
 
