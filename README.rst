@@ -32,17 +32,27 @@ Once cookiecutter clones the template, the user will be asked a series of questi
 project::
 
     $ full_name [Mandeep Bhutani]: Enter your full name.
+
     $ email [info@mandeep.xyz]: Enter your email address.
+
     $ github_username [mandeepbhutani]: Enter your github username.
+
     $ repo_name [cookiecutter-pyqt5]: Enter the name of your project's repository.
+
     $ package_name [cookiecutter-pyqt5]: Enter the name of your application's package.
+
     $ application_name [application]: Enter the name of your GUI application.
-    $ application_title [Template]: Enter the title of your application. This name is also used as an entry
-        point into the application.
+
+    $ application_title [Template]: Enter the title of your application. This name is also used as an entry point into the application.
+
     $ project_short_description [A PyQt5 GUI application]: Enter a short description about your project.
+
     $ version [0.0.1]: Enter the version number for your application.
+
     $ insert_menubar [yes]: If you would like a menu bar on your application, type yes.
+
     $ insert_statusbar [yes]: If you would like a movable status bar on your application, type yes.
+
 
 
 Usage
@@ -56,4 +66,6 @@ directory as well as a test suite in the package's tests folder. All the user ne
 Screenshot
 -----------
 
-..image :: screen.png
+The Qt library creates applications with the desktop environment of the user's operating system. Below is a screenshot of the template application opened on Linux Mint 18 Cinnamon.
+
+.. image :: screen.png
