@@ -17,5 +17,5 @@ from {{ cookiecutter.package_name }} import {{ cookiecutter.application_name }}
 class Test{{ cookiecutter.application_title }}:
 
     def setup():
-        window = {{cookiecutter.package_name }}.{{cookiecutter.application_title }}
+        window = {{cookiecutter.package_name }}.{{cookiecutter.application_title }}()
         window.show()
