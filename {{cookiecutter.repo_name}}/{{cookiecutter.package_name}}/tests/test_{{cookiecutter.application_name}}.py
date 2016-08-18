@@ -50,7 +50,7 @@ def test_open_file(window, menu, qtbot, mock):
     qtbot.keyClick(menu.file_sub_menu, Qt.Key_Enter)
 
 
-def test_about_dialog(self, qtbot, mock):
+def test_about_dialog(window, menu, qtbot, mock):
     qtbot.mouseClick(menu.help_sub_menu, Qt.LeftButton)
     qtbot.keyClick(menu.help_sub_menu, Qt.Key_Down)
     mock.patch.object(QDialog, 'exec_', return_value='finished')
