@@ -13,6 +13,8 @@ from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFi
                              QToolBar)
 from {{ cookiecutter.package_name }} import {{ cookiecutter.application_name }}
 
+app = QApplication(sys.argv)
+
 
 class Test{{ cookiecutter.application_title }}:
 
@@ -20,5 +22,5 @@ class Test{{ cookiecutter.application_title }}:
         self.window = {{cookiecutter.application_name }}.{{cookiecutter.application_title }}()
         self.window.show()
 
-    def window_title():
-        assert self.windowTitle() == '{{ cookiecutter.application_title }}'
+    def test_window_title(self):
+        assert self.window.windowTitle() == '{{ cookiecutter.application_title }}'
