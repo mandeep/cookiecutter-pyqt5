@@ -75,8 +75,6 @@ class Dialogs(QDialog):
         self.resize(400, 400)
         self.exec_()
 {% endif %}
-
-
 {% if cookiecutter.insert_statusbar == 'yes' %}
 class StatusBar(QToolBar):
 
@@ -86,9 +84,7 @@ class StatusBar(QToolBar):
         self.status_bar = QStatusBar()
 
         self.addWidget(self.status_bar)
-
 {% endif %}
-
 class {{ cookiecutter.application_title }}(QMainWindow):
 
     def __init__(self, parent=None):
@@ -103,7 +99,6 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         {% if cookiecutter.insert_statusbar == 'yes' %}
         self.addToolBar(StatusBar())
         {% endif %}
-
 
 def main():
     application = QApplication(sys.argv)
