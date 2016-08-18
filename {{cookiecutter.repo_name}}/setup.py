@@ -14,9 +14,11 @@ requirements = [
 test_requirements = [
     'pytest',
     'pytest-cov',
+    'pytest-faulthandler',
+    'pytest-mock',
     'pytest-qt',
     'pytest-xvfb',
-    'pytest-faulthandler'
+
 ]
 
 setup(
