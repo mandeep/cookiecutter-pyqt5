@@ -68,4 +68,4 @@ Screenshot
 
 The Qt library creates applications with the desktop environment of the user's operating system. Below is a screenshot of the template application opened on Linux Mint 18 Cinnamon.
 
-.. image :: screen.png
+.. image:: screen.png
