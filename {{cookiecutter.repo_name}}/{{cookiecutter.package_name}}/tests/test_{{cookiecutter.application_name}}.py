@@ -7,7 +7,6 @@ test_{{ cookiecutter.package_name }}
 
 Tests for `{{ cookiecutter.package_name }}` module.
 """
-import sys
 import pytest
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFileDialog,
@@ -23,7 +22,6 @@ def window(qtbot):
     new_window.show()
     return new_window
 
-
 {% if cookiecutter.insert_menubar == 'yes' %}
 @pytest.fixture
 def menu(qtbot):
@@ -32,7 +30,6 @@ def menu(qtbot):
     return new_menu_bar
 {% endif %}
 
-
 def test_window_title(window):
     assert window.windowTitle() == '{{ cookiecutter.application_title }}'
 
@@ -40,7 +37,6 @@ def test_window_title(window):
 def test_window_geometry(window):
     assert window.width() == 1024
     assert window.height() == 768
-
 
 {% if cookiecutter.insert_menubar == 'yes' %}
 def test_open_file(window, menu, qtbot, mock):
@@ -56,4 +52,3 @@ def test_about_dialog(window, menu, qtbot, mock):
     mock.patch.object(QDialog, 'exec_', return_value='finished')
     qtbot.keyClick(menu.help_sub_menu, Qt.Key_Enter)
 {% endif %}
-
