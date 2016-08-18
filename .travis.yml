@@ -7,6 +7,7 @@ notifications:
   email: false
 before_install:
   - pip install codecov
+  - pip install coveralls
 install:
   - pip install coverage
   - pip install pytest
@@ -15,3 +16,4 @@ script:
   - py.test -s -v --cov=.
 after_success:
   - codecov
+  - coveralls
