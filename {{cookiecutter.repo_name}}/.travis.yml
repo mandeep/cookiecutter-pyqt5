@@ -17,14 +17,11 @@ install:
   - pip install coveralls
   - pip install pytest
   - pip install pytest-cov
-  - pip install pytest-qt
-  - pip install pytest-mock
   - pip install pytest-faulthandler
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3
+  - pip install pytest-mock
+  - pip install pytest-qt
+  - pip install pytest-xvfb
 script:
-  - py.test -s -v --cov=./
+  - py.test -s -v --xvfb --cov=./
 after_success:
   - coveralls
