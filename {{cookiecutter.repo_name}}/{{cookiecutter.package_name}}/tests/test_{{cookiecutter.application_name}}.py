@@ -8,6 +8,7 @@ test_{{ cookiecutter.package_name }}
 Tests for `{{ cookiecutter.package_name }}` module.
 """
 import sys
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFileDialog,
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
                              QToolBar)
