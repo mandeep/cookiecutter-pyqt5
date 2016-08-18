@@ -16,6 +16,9 @@ from {{ cookiecutter.package_name }} import {{ cookiecutter.application_name }}
 
 class Test{{ cookiecutter.application_title }}:
 
-    def setup():
-        window = {{cookiecutter.package_name }}.{{cookiecutter.application_title }}()
-        window.show()
+    def setup(self):
+        self.window = {{cookiecutter.application_name }}.{{cookiecutter.application_title }}()
+        self.window.show()
+
+    def window_title():
+        assert self.windowTitle() == '{{ cookiecutter.application_title }}'

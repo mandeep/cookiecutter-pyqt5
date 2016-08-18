@@ -89,7 +89,7 @@ class StatusBar(QToolBar):
 
 {% endif %}
 
-class{{ cookiecutter.application_title }}(QMainWindow):
+class {{ cookiecutter.application_title }}(QMainWindow):
 
     def __init__(self, parent=None):
         super({{ cookiecutter.application_title }}, self).__init__(parent)
