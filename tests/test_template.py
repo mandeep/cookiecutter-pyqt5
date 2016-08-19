@@ -50,3 +50,34 @@ def test_init(cookies, context):
                 assert context['email'] in line
             elif 'version' in line:
                 assert context['version'] in line
+
+
+def test_setuptools(cookies, context):
+    result = cookies.bake(extra_context=context)
+    for file in build_files_list(str(result.project)):
+        if 'setup.py' in file:
+            test_setup_file = file
+
+    with open(test_setup_file) as infile:
+        for line in infile.readlines():
+            if 'name=' in line:
+                assert context['repo_name'] in line
+            elif 'version=' in line:
+                assert context['version'] in line
+            elif 'description=' in line and 'long_description' not in line:
+                assert context['project_short_description'] in line
+            elif 'author=' in line:
+                assert context['full_name'] in line
+            elif 'author_email' in line:
+                assert context['email'] in line
+            elif 'url=' in line:
+                assert 'https://github.com/{}/{}' .format(
+                    context['github_username'], context['repo_name']) in line
+            elif 'packages=' in line:
+                assert context['package_name'] in line
+            elif 'keywords=' in line:
+                assert context['repo_name'] in line
+            elif '{}:main' .format(context['application_name']) in line:
+                assert '{}={}.{}:main' .format(
+                    context['application_title'], context['package_name'],
+                    context['application_name']) in line
