@@ -13,7 +13,7 @@ def context():
         "application_name": "saxophone",
         "application_title": "Saxophone",
         "project_short_description": "Learn how to play the sax.",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "insert_menubar": "yes",
         "insert_statusbar": "yes"
     }
@@ -22,11 +22,8 @@ def context():
 def build_files_list(root_dir):
     """Build a list containing absolute paths to the generated files.
     Borrowed from https://github.com/pydanny/cookiecutter-django/"""
-    return [
-        os.path.join(dirpath, file_path)
-        for dirpath, subdirs, files in os.walk(root_dir)
-        for file_path in files
-    ]
+    return [os.path.join(dirpath, file_path) for dirpath, __, files in os.walk(root_dir)
+            for file_path in files]
 
 
 def test_template(cookies, context):
@@ -37,5 +34,19 @@ def test_template(cookies, context):
     assert result.project.basename == 'Lisa_Lionheart'
     assert result.project.isdir()
 
-    paths = build_files_list(str(result.project))
-    assert paths
+
+def test_init(cookies, context):
+    result = cookies.bake(extra_context=context)
+    for file in build_files_list(str(result.project)):
+        init_file = '{}/__init__.py' .format(context['package_name'])
+        if file.endswith(init_file):
+                test_init_file = file
+
+    with open(test_init_file) as infile:
+        for line in infile.readlines():
+            if 'author' in line:
+                assert context['full_name'] in line
+            elif 'email' in line:
+                assert context['email'] in line
+            elif 'version' in line:
+                assert context['version'] in line
