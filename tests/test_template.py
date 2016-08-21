@@ -35,27 +35,11 @@ def test_template(cookies, context):
     assert result.project.isdir()
 
 
-def test_init(cookies, context):
-    result = cookies.bake(extra_context=context)
-    for file in build_files_list(str(result.project)):
-        init_file = '{}/__init__.py' .format(context['package_name'])
-        if file.endswith(init_file):
-                test_init_file = file
-
-    with open(test_init_file) as infile:
-        for line in infile.readlines():
-            if 'author' in line:
-                assert context['full_name'] in line
-            elif 'email' in line:
-                assert context['email'] in line
-            elif 'version' in line:
-                assert context['version'] in line
-
-
 def test_setuptools(cookies, context):
     result = cookies.bake(extra_context=context)
     for file in build_files_list(str(result.project)):
         if 'setup.py' in file:
+            print(file)
             test_setup_file = file
 
     with open(test_setup_file) as infile:

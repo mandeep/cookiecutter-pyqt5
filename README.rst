@@ -1,4 +1,4 @@
-.. image:: header.png
+.. image:: images/header.png
 
 .. image:: https://travis-ci.org/mandeepbhutani/cookiecutter-pyqt5.svg?branch=master
     :target: https://travis-ci.org/mandeepbhutani/cookiecutter-pyqt5
@@ -67,4 +67,4 @@ Screenshot
 
 The Qt library creates applications native to the desktop environment of the user's operating system. Below is a screenshot of the template application opened on Linux Mint 18 Cinnamon.
 
-.. image:: screen.png
+.. image:: images/screen.png
