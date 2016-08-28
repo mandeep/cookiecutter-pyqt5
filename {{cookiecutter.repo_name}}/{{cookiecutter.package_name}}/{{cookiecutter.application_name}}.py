@@ -4,18 +4,7 @@ from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFi
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
                              QToolBar)
 
-{% if cookiecutter.insert_statusbar == 'yes' %}
-class StatusBar(QToolBar):
-    """Creates a status bar to be added to the main window. Inherits QToolBar so that the user
-    may move the status bar wherever they please."""
 
-    def __init__(self, parent=None):
-        super(StatusBar, self).__init__(parent)
-
-        self.status_bar = QStatusBar()
-
-        self.addWidget(self.status_bar)
-{% endif %}
 class {{ cookiecutter.application_title }}(QMainWindow):
     """Creates the main window that stores all of the widgets necessary for the application."""
 
@@ -63,6 +52,7 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         if accepted:
             with open(filename) as file:
                 file.read()
+
 
 def main():
     application = QApplication(sys.argv)
