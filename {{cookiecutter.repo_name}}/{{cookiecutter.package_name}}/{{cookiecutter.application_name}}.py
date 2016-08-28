@@ -45,7 +45,7 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.open_action = QAction('Open File', self)
         self.open_action.setStatusTip('Open a file into {{ cookiecutter.application_title }}.')
         self.open_action.setShortcut('CTRL+O')
-        self.open_action.triggered.connect(self.open_items.open_file)
+        self.open_action.triggered.connect(self.open_file)
 
         self.file_sub_menu.addAction(self.open_action)
 
