@@ -17,11 +17,10 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.setWindowTitle('{{ cookiecutter.application_title }}')
 
         self.menu_bar = self.menuBar()
-
         {% if cookiecutter.insert_statusbar == 'yes' %}
         self.status_bar = self.statusBar()
+        self.status_bar.showMessage('Ready', 5000)
         {% endif %}
-
         self.file_menu()
         self.help_menu()
 
