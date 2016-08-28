@@ -14,7 +14,6 @@ def context():
         "application_title": "Saxophone",
         "project_short_description": "Learn how to play the sax.",
         "version": "0.0.2",
-        "insert_menubar": "yes",
         "insert_statusbar": "yes"
     }
 

@@ -8,6 +8,5 @@
     "application_title": "Template",
     "project_short_description": "A PyQt5 GUI application",
     "version": "0.0.1",
-    "insert_menubar": "yes",
     "insert_statusbar": "yes"
 }
