@@ -35,11 +35,11 @@ def test_window_geometry(window):
     assert window.height() == 768
 
 
-def test_open_file(window, menu, qtbot, mock):
+def test_open_file(window, qtbot, mock):
     """Qtbot clicks on the file sub menu and then navigates to the Open File item. Mock creates
     an object to be passed to the QFileDialog."""
 
-    qtbot.mouseClick(menu.file_sub_menu, Qt.LeftButton)
-    qtbot.keyClick(menu.file_sub_menu, Qt.Key_Down)
+    qtbot.mouseClick(window.file_sub_menu, Qt.LeftButton)
+    qtbot.keyClick(window.file_sub_menu, Qt.Key_Down)
     mock.patch.object(QFileDialog, 'getOpenFileName', return_value=('', ''))
-    qtbot.keyClick(menu.file_sub_menu, Qt.Key_Enter)
+    qtbot.keyClick(window.file_sub_menu, Qt.Key_Enter)
