@@ -26,15 +26,6 @@ def window(qtbot):
     return new_window
 
 
-@pytest.fixture
-def menu(qtbot):
-    """Menu is used as a pytest fixture for tests that need to test the menu bar."""
-
-    new_menu_bar = {{cookiecutter.application_name}}.MenuBar()
-    qtbot.add_widget(new_menu_bar)
-    return new_menu_bar
-
-
 def test_window_title(window):
     assert window.windowTitle() == '{{ cookiecutter.application_title }}'
 
