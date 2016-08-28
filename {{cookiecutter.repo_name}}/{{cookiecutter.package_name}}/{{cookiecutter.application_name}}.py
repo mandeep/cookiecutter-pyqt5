@@ -2,7 +2,7 @@
 import sys
 from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFileDialog,
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
-                             QToolBar)
+                             QToolBar, QWidget)
 
 
 class {{ cookiecutter.application_title }}(QMainWindow):
@@ -15,6 +15,8 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         super({{ cookiecutter.application_title }}, self).__init__(parent)
         self.resize(1024, 768)
         self.setWindowTitle('{{ cookiecutter.application_title }}')
+        self.widget = QWidget()
+        self.layout = QHBoxLayout(self.widget)
 
         self.menu_bar = self.menuBar()
         {% if cookiecutter.insert_statusbar == 'yes' %}
