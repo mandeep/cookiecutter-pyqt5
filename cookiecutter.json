@@ -7,7 +7,7 @@
     "application_name": "application",
     "application_title": "Template",
     "project_short_description": "A PyQt5 GUI application",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "insert_toolbar": "yes",
     "insert_statusbar": "yes"
 }
