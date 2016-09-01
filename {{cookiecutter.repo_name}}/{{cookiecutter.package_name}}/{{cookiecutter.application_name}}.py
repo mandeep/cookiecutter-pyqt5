@@ -3,6 +3,7 @@
 import pkg_resources
 {% endif %}
 import sys
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFileDialog,
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
                              QToolBar, QWidget)
@@ -26,11 +27,11 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.status_bar = self.statusBar()
         self.status_bar.showMessage('Ready', 5000)
         {% endif %}
+        self.file_menu()
+        self.help_menu()
         {% if cookiecutter.insert_toolbar == 'yes' %}
         self.tool_bar_items()
         {% endif %}
-        self.file_menu()
-        self.help_menu()
 
     def file_menu(self):
         """Creates a file menu for the menu bar with an Open File item that opens a
