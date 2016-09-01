@@ -36,7 +36,6 @@ setup(
             '{{ cookiecutter.application_title }}={{ cookiecutter.package_name }}.{{ cookiecutter.application_name }}:main'
         ]
     },
-    include_package_data=True,
     install_requires=requirements,
     zip_safe=False,
     keywords='{{ cookiecutter.repo_name }}',
