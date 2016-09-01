@@ -94,3 +94,7 @@ target/
 # Cookiecutter
 output/
 python_boilerplate/
+
+# Images
+
+*.psd
