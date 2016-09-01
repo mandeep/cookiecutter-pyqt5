@@ -46,6 +46,19 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         """Creates a help menu for the menu bar with a dialog box used to show users helpful
         information about the application."""
         self.help_sub_menu = self.menu_bar.addMenu('Help')
+    {% if cookiecutter.insert_toolbar == 'yes' %}
+    def tool_bar_items(self):
+        self.tool_bar = QToolBar()
+        self.addToolBar(Qt.TopToolBarArea, self.tool_bar)
+        self.tool_bar.setMovable(False)
+
+        open_icon = pkg_resources.resource_filename('{{ cookiecutter.package_name }}',
+                                                          '/ic_open_in_new_black_48dp_1x.png.png')
+        tool_bar_open_action = QAction(QIcon(open_icon), 'Open File', self)
+        tool_bar_open_action.triggered.connect(self.open_file)
+
+        self.tool_bar.addAction(tool_bar_open_action)
+    {% endif %}    
 
     def open_file(self):
         """Opens a QFileDialog to allow the user to open a file into the application. The template
