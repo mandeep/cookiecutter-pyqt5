@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+{% if cookiecutter.insert_toolbar == 'yes' %}
+import pkg_resources
+{% endif %}
 import sys
 from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFileDialog,
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
