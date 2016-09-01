@@ -58,7 +58,7 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.tool_bar.setMovable(False)
 
         open_icon = pkg_resources.resource_filename('{{ cookiecutter.package_name }}.images',
-                                                    'ic_open_in_new_black_48dp_1x.png.png')
+                                                    'ic_open_in_new_black_48dp_1x.png')
         tool_bar_open_action = QAction(QIcon(open_icon), 'Open File', self)
         tool_bar_open_action.triggered.connect(self.open_file)
 
