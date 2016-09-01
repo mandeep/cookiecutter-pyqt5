@@ -31,6 +31,7 @@ setup(
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
     packages=['{{ cookiecutter.package_name }}', '{{ cookiecutter.package_name }}.images',
               '{{ cookiecutter.package_name }}.tests'],
+    package_data={'{{ cookiecutter.package_name }}.images': ['*.png']}
     entry_points={
         'console_scripts': [
             '{{ cookiecutter.application_title }}={{ cookiecutter.package_name }}.{{ cookiecutter.application_name }}:main'
