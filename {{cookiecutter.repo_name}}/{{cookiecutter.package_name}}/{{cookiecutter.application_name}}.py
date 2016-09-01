@@ -26,6 +26,9 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.status_bar = self.statusBar()
         self.status_bar.showMessage('Ready', 5000)
         {% endif %}
+        {% if cookiecutter.insert_toolbar == 'yes' %}
+        self.tool_bar_items()
+        {% endif %}
         self.file_menu()
         self.help_menu()
 
