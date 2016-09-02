@@ -48,9 +48,9 @@ project::
 
     $ version [0.0.1]: Enter the version number for your application.
 
-    $ insert_menubar [yes]: If you would like a menu bar on your application, type yes.
+    $ insert_toolbar [yes]: If you would like a tool bar on your application, press enter or type yes.
 
-    $ insert_statusbar [yes]: If you would like a movable status bar on your application, type yes.
+    $ insert_statusbar [yes]: If you would like a movable status bar on your application, press enter or type yes.
 
 
 
