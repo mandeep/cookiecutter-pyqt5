@@ -20,6 +20,10 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         super({{ cookiecutter.application_title }}, self).__init__(parent)
         self.resize(1024, 768)
         self.setWindowTitle('{{ cookiecutter.application_title }}')
+        window_icon = pkg_resources.resource_filename('{{ cookiecutter.package_name }}.images',
+                                                      'ic_insert_drive_file_black_48dp_1x.png')
+        self.setWindowIcon(QIcon(window_icon))
+
         self.widget = QWidget()
         self.layout = QHBoxLayout(self.widget)
 
