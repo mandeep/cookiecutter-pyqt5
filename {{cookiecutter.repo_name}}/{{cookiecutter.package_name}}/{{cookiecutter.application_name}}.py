@@ -32,7 +32,6 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         {% if cookiecutter.insert_toolbar == 'yes' %}
         self.tool_bar_items()
         {% endif %}
-
     def file_menu(self):
         """Creates a file menu for the menu bar with an Open File item that opens a
         file dialog."""
@@ -51,7 +50,6 @@ class {{ cookiecutter.application_title }}(QMainWindow):
 
         self.file_sub_menu.addAction(self.open_action)
         self.file_sub_menu.addAction(self.exit_action)
-
     {% if cookiecutter.insert_toolbar == 'yes' %}
     def tool_bar_items(self):
         self.tool_bar = QToolBar()
@@ -65,7 +63,6 @@ class {{ cookiecutter.application_title }}(QMainWindow):
 
         self.tool_bar.addAction(tool_bar_open_action)
     {% endif %}    
-
     def open_file(self):
         """Opens a QFileDialog to allow the user to open a file into the application. The template
         creates the dialog and simply reads it with the context manager."""
