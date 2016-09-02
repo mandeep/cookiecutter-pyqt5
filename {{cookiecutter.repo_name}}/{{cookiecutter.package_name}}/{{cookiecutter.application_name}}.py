@@ -5,7 +5,7 @@ import pkg_resources
 import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QDesktopWidget, QFileDialog,
+from PyQt5.QtWidgets import (QAction, QApplication, QDesktopWidget, QFileDialog,
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
                              QToolBar, QWidget)
 
@@ -45,12 +45,14 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.open_action.setShortcut('CTRL+O')
         self.open_action.triggered.connect(self.open_file)
 
-        self.file_sub_menu.addAction(self.open_action)
+        self.exit_action = QAction('Exit Application', self)
+        self.exit_action.setStatusTip('Exit the application.')
+        self.exit_action.setShortcut('CTRL+Q')
+        self.exit_action.triggered.connect(lambda: QApplication.quit())
 
-    def help_menu(self):
-        """Creates a help menu for the menu bar with a dialog box used to show users helpful
-        information about the application."""
-        self.help_sub_menu = self.menu_bar.addMenu('Help')
+        self.file_sub_menu.addAction(self.open_action)
+        self.file_sub_menu.addAction(self.exit_action)
+
     {% if cookiecutter.insert_toolbar == 'yes' %}
     def tool_bar_items(self):
         self.tool_bar = QToolBar()
