@@ -1,7 +1,7 @@
 .. image:: images/header.png
 
-.. image:: https://travis-ci.org/mandeepbhutani/cookiecutter-pyqt5.svg?branch=master
-    :target: https://travis-ci.org/mandeepbhutani/cookiecutter-pyqt5
+.. image:: https://travis-ci.org/mandeep/cookiecutter-pyqt5.svg?branch=master
+    :target: https://travis-ci.org/mandeep/cookiecutter-pyqt5
 
 Cookiecutter-PyQt5 is a Cookiecutter_ template that assists users in their creation of GUI applications.
 
