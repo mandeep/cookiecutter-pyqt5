@@ -29,11 +29,11 @@ With cookiecutter installed, the PyQt5 cookiecutter template can be installed wi
 Once cookiecutter clones the template, the user will be asked a series of questions related to their
 project::
 
-    $ full_name [Mandeep Bhutani]: Enter your full name.
+    $ full_name [Mandeep]: Enter your full name.
 
     $ email [info@mandeep.xyz]: Enter your email address.
 
-    $ github_username [mandeepbhutani]: Enter your github username.
+    $ github_username [mandeep]: Enter your github username.
 
     $ repo_name [cookiecutter-pyqt5]: Enter the name of your project's repository.
 
