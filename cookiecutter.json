@@ -1,13 +1,13 @@
 {
-    "full_name": "Mandeep Bhutani",
+    "full_name": "Mandeep",
     "email": "info@mandeep.xyz",
-    "github_username": "mandeepbhutani",
+    "github_username": "mandeep",
     "repo_name": "cookiecutter_PyQt5",
     "package_name": "{{ cookiecutter.repo_name.lower().replace(' ', '_') }}",
     "application_name": "application",
     "application_title": "Template",
     "project_short_description": "A PyQt5 GUI application",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "insert_toolbar": "yes",
     "insert_statusbar": "yes"
 }
