@@ -64,6 +64,7 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.about_action.setShortcut('CTRL+H')
         self.about_action.triggered.connect(lambda: self.about_dialog.exec_())
 
+        self.help_sub_menu.addAction(self.about_action)
     {% if cookiecutter.insert_toolbar == 'yes' %}
     def tool_bar_items(self):
         self.tool_bar = QToolBar()
