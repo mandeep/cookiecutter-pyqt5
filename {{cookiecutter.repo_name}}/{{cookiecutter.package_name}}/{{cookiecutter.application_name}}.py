@@ -5,7 +5,7 @@ import pkg_resources
 import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import (QAction, QApplication, QDesktopWidget, QFileDialog,
+from PyQt5.QtWidgets import (QAction, QApplication, QDesktopWidget, QDialog, QFileDialog,
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
                              QToolBar, QWidget)
 
@@ -16,7 +16,6 @@ class {{ cookiecutter.application_title }}(QMainWindow):
     def __init__(self, parent=None):
         """Initializes the window size and title and instantiates the menu bar and status bar
         if selected by the user."""
-
         super({{ cookiecutter.application_title }}, self).__init__(parent)
         self.resize(1024, 768)
         self.setWindowTitle('{{ cookiecutter.application_title }}')
@@ -28,18 +27,19 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.layout = QHBoxLayout(self.widget)
 
         self.menu_bar = self.menuBar()
+        self.about_dialog = AboutDialog()
         {% if cookiecutter.insert_statusbar == 'yes' %}
         self.status_bar = self.statusBar()
         self.status_bar.showMessage('Ready', 5000)
         {% endif %}
         self.file_menu()
+        self.help_menu()
         {% if cookiecutter.insert_toolbar == 'yes' %}
         self.tool_bar_items()
         {% endif %}
     def file_menu(self):
         """Creates a file menu for the menu bar with an Open File item that opens a
         file dialog."""
-
         self.file_sub_menu = self.menu_bar.addMenu('File')
 
         self.open_action = QAction('Open File', self)
@@ -54,6 +54,16 @@ class {{ cookiecutter.application_title }}(QMainWindow):
 
         self.file_sub_menu.addAction(self.open_action)
         self.file_sub_menu.addAction(self.exit_action)
+
+    def help_menu(self):
+        """"""
+        self.help_sub_menu = self.menu_bar.addMenu('Help')
+
+        self.about_action = QAction('About', self)
+        self.about_action.setStatusTip('About the application.')
+        self.about_action.setShortcut('CTRL+H')
+        self.about_action.triggered.connect(lambda: self.about_dialog.exec_())
+
     {% if cookiecutter.insert_toolbar == 'yes' %}
     def tool_bar_items(self):
         self.tool_bar = QToolBar()
@@ -76,6 +86,38 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         if accepted:
             with open(filename) as file:
                 file.read()
+
+
+class AboutDialog(QDialog):
+    """Contains the necessary elements to show helpful text in a dialog."""
+
+    def __init__(self, parent=None):
+        """Displays a dialog that shows application information."""
+        super(AboutDialog, self).__init__(parent)
+
+        self.setWindowTitle('About')
+        help_icon = pkg_resources.resource_filename('{{ cookiecutter.package_name }}.images',
+                                                    'ic_help_black_48dp_1x.png')
+        self.setWindowIcon(QIcon(help_icon))
+        self.resize(300, 200)
+
+        author = QLabel('{{ cookiecutter.full_name }}')
+        author.setAlignment(Qt.AlignCenter)
+
+        icons = QLabel('Material design icons created by Google')
+        icons.setAlignment(Qt.AlignCenter)
+
+        github = QLabel('GitHub: {{ cookiecutter.github_username }}')
+        github.setAlignment(Qt.AlignCenter)
+
+        self.layout = QVBoxLayout()
+        self.layout.setAlignment(Qt.AlignVCenter)
+
+        self.layout.addWidget(author)
+        self.layout.addWidget(icons)
+        self.layout.addWidget(github)
+
+        self.setLayout(self.layout)
 
 
 def main():
