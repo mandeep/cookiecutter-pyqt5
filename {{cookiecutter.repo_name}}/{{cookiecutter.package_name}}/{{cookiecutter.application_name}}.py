@@ -7,7 +7,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (QAction, QApplication, QDesktopWidget, QDialog, QFileDialog,
                              QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
-                             QToolBar, QWidget)
+                             QToolBar, QVBoxLayout, QWidget)
 
 
 class {{ cookiecutter.application_title }}(QMainWindow):
