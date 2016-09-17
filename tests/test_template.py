@@ -38,7 +38,6 @@ def test_setuptools(cookies, context):
     result = cookies.bake(extra_context=context)
     for file in build_files_list(str(result.project)):
         if 'setup.py' in file:
-            print(file)
             test_setup_file = file
 
     with open(test_setup_file) as infile:
