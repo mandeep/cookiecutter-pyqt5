@@ -83,7 +83,6 @@ class {{ cookiecutter.application_title }}(QMainWindow):
 
     def open_file(self):
         """Open a QFileDialog to allow the user to open a file into the application."""
-
         filename, accepted = QFileDialog.getOpenFileName(self, 'Open File')
 
         if accepted:
