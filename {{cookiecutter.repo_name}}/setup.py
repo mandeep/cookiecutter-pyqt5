@@ -1,14 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from setuptools import setup
-
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
 
 requirements = [
 
-    # TODO: put package requirements here
+    # TODO: put your package requirements here
 ]
 
 test_requirements = [
@@ -25,7 +19,6 @@ setup(
     name='{{ cookiecutter.repo_name }}',
     version='{{ cookiecutter.version }}',
     description="{{ cookiecutter.project_short_description }}",
-    long_description=readme,
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
