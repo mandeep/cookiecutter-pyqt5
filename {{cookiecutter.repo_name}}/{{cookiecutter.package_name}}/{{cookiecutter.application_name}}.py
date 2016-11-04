@@ -1,19 +1,18 @@
-# -*- coding: utf-8 -*-
-import pkg_resources
 import sys
+
+import pkg_resources
+
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (QAction, QApplication, QDesktopWidget, QDialog, QFileDialog,
-                             QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenuBar, QStatusBar,
-                             QToolBar, QVBoxLayout, QWidget)
+                             QHBoxLayout, QLabel, QMainWindow, QToolBar, QVBoxLayout, QWidget)
 
 
 class {{ cookiecutter.application_title }}(QMainWindow):
-    """Creates the main window that stores all of the widgets necessary for the application."""
+    """Create the main window that stores all of the widgets necessary for the application."""
 
     def __init__(self, parent=None):
-        """Initializes the window size and title and instantiates the menu bar and status bar
-        if selected by the user."""
+        """Initialize the components of the main window."""
         super({{ cookiecutter.application_title }}, self).__init__(parent)
         self.resize(1024, 768)
         self.setWindowTitle('{{ cookiecutter.application_title }}')
