@@ -26,17 +26,17 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.menu_bar = self.menuBar()
         self.about_dialog = AboutDialog()
 
-        {% if cookiecutter.insert_statusbar == 'yes' -%}
+        {%- if cookiecutter.insert_statusbar == 'yes' -%}
         self.status_bar = self.statusBar()
         self.status_bar.showMessage('Ready', 5000)
-        {%- endif %}
+        {%- endif -%}
 
         self.file_menu()
         self.help_menu()
 
-        {% if cookiecutter.insert_toolbar == 'yes' -%}
+        {%- if cookiecutter.insert_toolbar == 'yes' -%}
         self.tool_bar_items()
-        {%- endif %}
+        {%- endif -%}
 
     def file_menu(self):
         """Create a file submenu with an Open File item that opens a file dialog."""
@@ -66,7 +66,7 @@ class {{ cookiecutter.application_title }}(QMainWindow):
 
         self.help_sub_menu.addAction(self.about_action)
 
-    {% if cookiecutter.insert_toolbar == 'yes' -%}
+    {%- if cookiecutter.insert_toolbar == 'yes' -%}
     def tool_bar_items(self):
         """Create a tool bar for the main window."""
         self.tool_bar = QToolBar()
@@ -79,7 +79,7 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         tool_bar_open_action.triggered.connect(self.open_file)
 
         self.tool_bar.addAction(tool_bar_open_action)
-    {%- endif %}    
+    {%- endif -%}    
 
     def open_file(self):
         """Open a QFileDialog to allow the user to open a file into the application."""
