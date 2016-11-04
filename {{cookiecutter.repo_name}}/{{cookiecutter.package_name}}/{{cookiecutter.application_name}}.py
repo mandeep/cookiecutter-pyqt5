@@ -25,18 +25,21 @@ class {{ cookiecutter.application_title }}(QMainWindow):
 
         self.menu_bar = self.menuBar()
         self.about_dialog = AboutDialog()
-        {% if cookiecutter.insert_statusbar == 'yes' %}
+
+        {% if cookiecutter.insert_statusbar == 'yes' -%}
         self.status_bar = self.statusBar()
         self.status_bar.showMessage('Ready', 5000)
-        {% endif %}
+        {%- endif %}
+
         self.file_menu()
         self.help_menu()
-        {% if cookiecutter.insert_toolbar == 'yes' %}
+
+        {% if cookiecutter.insert_toolbar == 'yes' -%}
         self.tool_bar_items()
-        {% endif %}
+        {%- endif %}
+
     def file_menu(self):
-        """Creates a file menu for the menu bar with an Open File item that opens a
-        file dialog."""
+        """Create a file submenu with an Open File item that opens a file dialog."""
         self.file_sub_menu = self.menu_bar.addMenu('File')
 
         self.open_action = QAction('Open File', self)
@@ -53,7 +56,7 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.file_sub_menu.addAction(self.exit_action)
 
     def help_menu(self):
-        """"""
+        """Create a help submenu with an About item tha opens an about dialog."""
         self.help_sub_menu = self.menu_bar.addMenu('Help')
 
         self.about_action = QAction('About', self)
@@ -62,8 +65,10 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         self.about_action.triggered.connect(lambda: self.about_dialog.exec_())
 
         self.help_sub_menu.addAction(self.about_action)
-    {% if cookiecutter.insert_toolbar == 'yes' %}
+
+    {% if cookiecutter.insert_toolbar == 'yes' -%}
     def tool_bar_items(self):
+        """Create a tool bar for the main window."""
         self.tool_bar = QToolBar()
         self.addToolBar(Qt.TopToolBarArea, self.tool_bar)
         self.tool_bar.setMovable(False)
@@ -74,10 +79,10 @@ class {{ cookiecutter.application_title }}(QMainWindow):
         tool_bar_open_action.triggered.connect(self.open_file)
 
         self.tool_bar.addAction(tool_bar_open_action)
-    {% endif %}    
+    {%- endif %}    
+
     def open_file(self):
-        """Opens a QFileDialog to allow the user to open a file into the application. The template
-        creates the dialog and simply reads it with the context manager."""
+        """Open a QFileDialog to allow the user to open a file into the application."""
 
         filename, accepted = QFileDialog.getOpenFileName(self, 'Open File')
 
@@ -87,10 +92,10 @@ class {{ cookiecutter.application_title }}(QMainWindow):
 
 
 class AboutDialog(QDialog):
-    """Contains the necessary elements to show helpful text in a dialog."""
+    """Create the necessary elements to show helpful text in a dialog."""
 
     def __init__(self, parent=None):
-        """Displays a dialog that shows application information."""
+        """Display a dialog that shows application information."""
         super(AboutDialog, self).__init__(parent)
 
         self.setWindowTitle('About')
