@@ -1,7 +1,6 @@
 from setuptools import setup
 
 requirements = [
-
     # TODO: put your package requirements here
 ]
 
@@ -12,7 +11,6 @@ test_requirements = [
     'pytest-mock',
     'pytest-qt',
     'pytest-xvfb',
-
 ]
 
 setup(
