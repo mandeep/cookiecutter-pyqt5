@@ -4,6 +4,7 @@ import pytest
 
 @pytest.fixture
 def context():
+    """Test template creation with these parameters."""
     return {
         "full_name": "Lisa Simpson",
         "email": "smartgirl63_\@yahoo.com",
@@ -26,6 +27,7 @@ def build_files_list(root_dir):
 
 
 def test_template(cookies, context):
+    """Test the template for proper creation."""
     result = cookies.bake(extra_context=context)
 
     assert result.exit_code == 0
@@ -35,6 +37,7 @@ def test_template(cookies, context):
 
 
 def test_setuptools(cookies, context):
+    """Test setup.py for proper creation."""
     result = cookies.bake(extra_context=context)
     for file in build_files_list(str(result.project)):
         if 'setup.py' in file:
