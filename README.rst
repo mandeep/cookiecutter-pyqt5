@@ -3,9 +3,17 @@
 .. image:: https://travis-ci.org/mandeep/cookiecutter-pyqt5.svg?branch=master
     :target: https://travis-ci.org/mandeep/cookiecutter-pyqt5
 
-Cookiecutter-PyQt5 is a Cookiecutter_ template that assists users in their creation of PyQt5 GUI applications. All projects created from this cookiecutter will default to the GPLv3 license. For more details regarding Riverbank's license please visit: https://www.riverbankcomputing.com/commercial/license-faq
+Cookiecutter-PyQt5 is a Cookiecutter_ template that assists users in their creation of PyQt5 GUI applications. 
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+
+License
+-------
+
+All projects created from this cookiecutter should use the GPLv3 license, unless you have purchased a commercial license for PyQt5. 
+If you do not have a commercial license, you **must** update the license for your project to GPLv3_ (a copyleft license) as required by the  licensing terms of PyQt5. For more details regarding Riverbank's license please visit: https://www.riverbankcomputing.com/commercial/license-faq
+
+.. _GPLv3: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Features
 --------
