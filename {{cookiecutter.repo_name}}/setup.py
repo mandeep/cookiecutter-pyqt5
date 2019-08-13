@@ -4,15 +4,6 @@ requirements = [
     # TODO: put your package requirements here
 ]
 
-test_requirements = [
-    'pytest',
-    'pytest-cov',
-    'pytest-faulthandler',
-    'pytest-mock',
-    'pytest-qt',
-    'pytest-xvfb',
-]
-
 setup(
     name='{{ cookiecutter.repo_name }}',
     version='{{ cookiecutter.version }}',
@@ -36,6 +27,4 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
-    test_suite='tests',
-    tests_require=test_requirements
 )
